@@ -17,14 +17,9 @@ return(
 
     <Footer />
 
-
-
 </div>
 
-
-
-)
-
+);
 
 
 }

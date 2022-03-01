@@ -13,7 +13,7 @@ return(
 
     <div className="container"> 
 
-        <NavbarBrand href="/"> Bohubrihi Restuarant </NavbarBrand>
+        <NavbarBrand href="/"> Bohubrihi  Restuarant </NavbarBrand>
         
     </div> 
 
