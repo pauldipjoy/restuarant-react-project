@@ -24,15 +24,23 @@ return(
 
             <CardText>
 
-                <p>{props.dish.description}</p>
-                <p>{props.dish.price}/-</p>
-                
-        
+                {props.dish.description}
                 
             </CardText>
 
+            
+
+            <CardText>
+
+               Price:{props.dish.price}/-
+
+            </CardText>
+                
+    
+
 
             <hr />
+            
 
             <LoadComments  comments = {props.dish.comments} />
 
