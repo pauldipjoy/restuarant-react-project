@@ -17,7 +17,7 @@ selectedDish : null
 
 onDishSelect = dish => {
     
-    console.log(dish);
+    // console.log(dish);
 
     this.setState(
 
@@ -37,6 +37,7 @@ render() {
 
         return(
 
+
             <MenuItem  dish ={item}
 
             key = {item.id}
@@ -49,8 +50,10 @@ render() {
 
         );
     })
+    
 
     let  dishDetail  = null;
+
     if(this.state.selectedDish != null){
 
         dishDetail = <DishDetail dish = {this.state.selectedDish} />
