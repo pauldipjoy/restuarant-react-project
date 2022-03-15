@@ -22,6 +22,7 @@ return(
             
             </CardTitle>
 
+
             <CardText>
 
                 {props.dish.description}
@@ -32,7 +33,7 @@ return(
 
             <CardText>
 
-               Price:{props.dish.price}/-
+                Price: {props.dish.price}/-
 
             </CardText>
                 
@@ -59,7 +60,8 @@ return(
 </div>
 
 
-);    
+);
+
 }
 
 

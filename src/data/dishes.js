@@ -7,6 +7,7 @@ const DISHES = [
         label: 'Hot',
         price: '199',
         description: 'This chicken burger gets an Asian-flavor twist with ginger and garlic. It\'s topped off with a fabulous coleslaw. If you like, serve the coleslaw as a side for grilled items, like chicken breasts, fish fillets or chops',
+
         comments: [
             {
                 id: 0,
@@ -53,6 +54,7 @@ const DISHES = [
         label: '',
         price: '599',
         description: 'BBQ chicken pizza with tangy BBQ sauce, chicken, and red onion. Gouda cheese gives the homemade pizza the most delicious smoky flavor and cilantro adds a touch of freshness. My pizza dough recipe makes enough for two 12-inch pizzas, so you can freeze half for later. It’s an easy thick-style pizza crust with unbeatable flavor.',
+        
         comments: [
             {
                 id: 0,
