@@ -7,6 +7,7 @@ import { Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem } from 'reac
 class Navigation extends Component {
 
     constructor(props){
+
     super(props);
 
     this.state = {
@@ -34,16 +35,17 @@ render() {
 
 return(
 
-    <div>
-        
-        <Navbar  color="dark" dark expand="sm">
-        
-        
-            <div className="container"> 
 
-        <NavbarToggler  onClick={ this.navToggle } className = "ml-4"/>
+<div>
+        
+    <Navbar  color="dark" dark expand="sm">
+        
+        
+        <div className="container"> 
 
-            <NavbarBrand href="/"> Bohubrihi Restuarant </NavbarBrand>
+            <NavbarToggler  onClick={ this.navToggle } />
+
+                <NavbarBrand href="/"> Bohubrihi Restuarant </NavbarBrand>
 
             
 
@@ -83,13 +85,13 @@ return(
 
             </Collapse>
                 
-    </div> 
+        </div> 
         
         
-        </Navbar>
+    </Navbar>
         
         
-        </div>
+</div>
         
         
         );    
