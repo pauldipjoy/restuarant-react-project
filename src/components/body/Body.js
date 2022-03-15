@@ -1,5 +1,4 @@
 import React from 'react';
-import Menu from './Menu.js';
 
 
 
@@ -9,8 +8,7 @@ return(
 
 <div>
 
-    <Menu />
-
+    
 </div>
 
 

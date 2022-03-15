@@ -1,33 +1,101 @@
-import React from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
+
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem } from 'reactstrap';
 
 
-const Navigation = () => {
+class Navigation extends Component {
 
-return(
+    constructor(props){
+    super(props);
 
-<div>
+    this.state = {
 
-<Navbar dark color="dark">
+    isNavOpen : false
 
-
-    <div className="container"> 
-
-        <NavbarBrand href="/"> Bohubrihi  Restuarant </NavbarBrand>
-        
-    </div> 
+    }
+    }
 
 
-</Navbar>
+    navToggle = () => {
+
+    this.setState ({
 
 
-</div>
+    isNavOpen : !this.state.isNavOpen
 
 
-);
+    })
 
 }
 
+render() {
 
+
+return(
+
+    <div>
+        
+        <Navbar  color="dark" dark expand="sm">
+        
+        
+            <div className="container"> 
+
+        <NavbarToggler  onClick={ this.navToggle } className = "ml-4"/>
+
+            <NavbarBrand href="/"> Bohubrihi Restuarant </NavbarBrand>
+
+            
+
+
+            <Collapse isOpen={ this.state.isNavOpen } navbar>
+
+                <Nav className= "mr-auto" navbar>
+
+                    <NavItem>
+
+                        <Link to="/" className="nav-link active">Home</Link>
+
+                    </NavItem>
+
+                    <NavItem>
+
+                        <Link to="/menu" className="nav-link">Menu</Link>
+
+                    </NavItem>
+
+                    <NavItem>
+
+                        <Link to="/about" className="nav-link">About</Link>
+
+                    </NavItem>
+
+                    <NavItem>
+
+                        <Link to="/contact" className="nav-link">Contact</Link>
+
+                    </NavItem>
+
+
+
+
+                </Nav>
+
+            </Collapse>
+                
+    </div> 
+        
+        
+        </Navbar>
+        
+        
+        </div>
+        
+        
+        );    
+
+}
+
+}
 
 export default Navigation;
