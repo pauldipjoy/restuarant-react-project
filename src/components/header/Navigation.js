@@ -23,7 +23,7 @@ class Navigation extends Component {
     this.setState ({
 
 
-    isNavOpen : !this.state.isNavOpen
+    isNavOpen : ! this.state.isNavOpen
 
 
     })
