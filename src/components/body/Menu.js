@@ -50,6 +50,12 @@ toggleModel = () => {
 
 
 
+
+
+
+
+
+
 render() {
 
 
@@ -100,7 +106,7 @@ render() {
         </CardColumns>
 
 
-        <Modal isOpen = {this.state.modalOpen} onClick = {this.toggleModel}  >
+        <Modal isOpen = {this.state.modalOpen} onClick = {this.toggleModel} >
 
             <ModalBody>
 
@@ -112,7 +118,7 @@ render() {
 
             <ModalFooter>
 
-                <Button color= "danger">
+                <Button color= "danger" onClick={this.toggleModel} >
 
                     Close
 
@@ -132,6 +138,8 @@ render() {
     </div>
     
     );
+
+
 }
 }
 
