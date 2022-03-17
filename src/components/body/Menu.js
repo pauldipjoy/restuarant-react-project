@@ -43,15 +43,7 @@ toggleModel = () => {
     })
 
 
-
 }
-
-
-
-
-
-
-
 
 
 
@@ -107,6 +99,8 @@ render() {
 
 
         <Modal isOpen = {this.state.modalOpen} onClick = {this.toggleModel} >
+
+
 
             <ModalBody>
 
