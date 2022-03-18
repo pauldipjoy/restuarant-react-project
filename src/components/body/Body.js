@@ -16,12 +16,12 @@ return(
 
     <Switch>
 
-            <Route  path= "/home"    exact   component = {Home}/>
-            <Route  path= "/menu"  exact   component = {Menu}/>
-            <Route  path= "/about"  exact   component = {About}/>
-            <Route  path= "/contact"  exact   component = {Contact}/>
+                <Route  path= "/home"    exact   component = {Home}/>
+                <Route  path= "/menu"  exact   component = {Menu}/>
+                <Route  path= "/about"  exact   component = {About}/>
+                <Route  path= "/contact"  exact   component = {Contact}/>
 
-            <Redirect from="/" to = "/home" />
+        <Redirect from="/" to = "/home" />
 
 
 
