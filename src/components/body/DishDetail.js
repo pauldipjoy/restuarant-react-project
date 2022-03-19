@@ -43,7 +43,7 @@ return(
             <hr />
             
 
-            <LoadComments  comments = {props.dish.comments} />
+            <LoadComments  comments = {props.comments} />
 
 
             
