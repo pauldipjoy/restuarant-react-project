@@ -6,6 +6,8 @@ class Home extends Component {
 
 render() {
 
+    document.title = "Home";
+
 
 return(
 

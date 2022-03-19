@@ -50,6 +50,8 @@ handleSubmit = event =>{
 
 render() {
 
+    document.title = "Contact";
+
 
             return(
 
