@@ -54,7 +54,7 @@ render() {
             return(
 
                 <div className= "container">
-                    <div className="row row-content" style={ {paddingleft:"20px" ,textAlign: "left"} }>
+                    <div className="row row-content" style={ {paddingleft:"20px" , textAlign: "left"} }>
                         <div className="col-12">
                             <h3>Send us your feedback</h3>
                         </div>
