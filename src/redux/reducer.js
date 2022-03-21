@@ -8,7 +8,8 @@ import DISHES from '../data/dishes';
 const initialState = {
 
     dishes : DISHES ,
-    comments : COMMENTS 
+    comments : COMMENTS,
+    sample : "Hello World"
 
 }
 

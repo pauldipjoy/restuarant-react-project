@@ -6,23 +6,27 @@ import MainComponent from './components/MainComponent.js';
 import myStore from './redux/store';
 
 function App() {
-  return (
+
+  // console.log("App.js:" , myStore.getState());
+
+return (
+
     <div className ="App" >
 
       <Provider store={myStore} >
 
         <BrowserRouter>
       
-          <MainComponent   />
+          <MainComponent />
         
         </BrowserRouter>
 
       </Provider>
 
-  
-    
     </div>
-  );
+
+);
+
 }
 
 export default App;
