@@ -66,7 +66,7 @@ render() {
 
             key = {item.id}
 
-            DishSelect = { () => this.onDishSelect(item)}
+            DishSelect = { () => this.onDishSelect(item) }
 
 
 
@@ -78,7 +78,7 @@ render() {
 
     let  dishDetail  = null;
 
-    if(this.state.selectedDish != null){
+    if(this.state.selectedDish != null) {
 
     const comments = this.state.comments.filter(comment => comment.dishId === this.state.selectedDish.id)
 
