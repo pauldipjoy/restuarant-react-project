@@ -100,7 +100,7 @@ render() {
 
     
 
- return (
+return (
 
     <div className ="container" >
 
@@ -114,7 +114,7 @@ render() {
         </CardColumns>
 
 
-        <Modal isOpen = {this.state.modalOpen} onClick = {this.toggleModel} >
+        <Modal isOpen = {this.state.modalOpen}>
 
 
 
