@@ -48,7 +48,7 @@ return(
 
             <hr/>
 
-            <CommentForm  />
+            <CommentForm dishId = {props.dish.id} />
 
 
             
