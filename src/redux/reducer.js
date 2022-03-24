@@ -18,6 +18,7 @@ import * as actionTypes from './actionTypes';
 const dishReducer = (dishState = DISHES , action) => {
 
     switch(action.type){
+        
         default:
             return dishState;
     }
