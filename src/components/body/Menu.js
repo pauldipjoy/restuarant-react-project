@@ -12,7 +12,7 @@ const mapStateToProps = state => {
     return{
 
         dishes: state.dishes,
-        comments : state.comments
+        comments: state.comments
 
     }
 }
@@ -82,6 +82,7 @@ componentDidMount(){
 render() {
 
     document.title = "Menu";
+    
 
     if(this.props.dishes.isLoading){
 
