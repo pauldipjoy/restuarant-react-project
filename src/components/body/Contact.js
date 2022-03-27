@@ -1,7 +1,13 @@
 /* eslint-disable react/jsx-pascal-case */
 import React, { Component } from 'react';
-import { Control, LocalForm } from 'react-redux-form';
+import { Control, Errors, LocalForm } from 'react-redux-form';
 import { Button, Col, FormGroup, Label } from 'reactstrap';
+
+
+const required = val => val && val.length;
+const isNumber = val => !isNaN(Number(val));
+const validEmail =val => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+
 
 
 
@@ -35,6 +41,22 @@ document.title = "Contact";
                                             name = "firstname"
                                             placeholder= "First Name"
                                             className="form-control"
+                                            validators={{
+                                            
+                                                required
+                        
+                                            }}
+                                        />
+                                        <Errors
+                                            className="text-danger"
+                                            model = ".firstname"
+                                            show = "touched"
+                                            messages = {{
+
+                                                required: "Required This Field?"
+                                            }}
+
+                                        
                                         />
                                     </Col>
                                 </FormGroup>
@@ -46,7 +68,23 @@ document.title = "Contact";
                                             name = "lastname" 
                                             placeholder= "Last Name"
                                             className="form-control"
+                                            validators={{
+                                            
+                                                required
+                        
+                                            }}
                                         />
+                                        <Errors
+                                            className="text-danger"
+                                            model = ".lastname"
+                                            show = "touched"
+                                            messages = {{
+
+                                                required: "Required This Field?"
+                                            }}
+
+                                        />
+                                        
                                     </Col>
                                 </FormGroup>
                                 <FormGroup row>
@@ -57,6 +95,23 @@ document.title = "Contact";
                                             name = "telnum" 
                                             placeholder= "Tel. Number" 
                                             className="form-control"
+                                            validators={{
+                                            
+                                                required,
+                                                isNumber
+                        
+                                            }}
+                                        />
+                                        <Errors
+                                            className="text-danger"
+                                            model = ".telnum"
+                                            show = "touched"
+                                            message = {{
+
+                                                required: "Required This Field?",
+                                                isNumber: "Invalid Number!"
+                                            }}
+
                                         />
                                     </Col>
                                 </FormGroup>
@@ -68,6 +123,24 @@ document.title = "Contact";
                                             name = "email"
                                             placeholder= "Email"
                                             className="form-control"
+                                            validators={{
+                                            
+                                                required,
+                                                validEmail
+                        
+                                            }}
+                                        />
+                                        <Errors
+                                            className="text-danger"
+                                            model = ".email"
+                                            show = "touched"
+                                            messages = {{
+
+                                                required: "Required This Field?",
+                                                validEmail: "Invalid Email!"
+                                            }}
+
+                                        
                                         />
                                     </Col>
                                 </FormGroup>
@@ -80,7 +153,7 @@ document.title = "Contact";
                                         <FormGroup check>
                                             <Label check>
                                                 <Control.checkbox
-                                                    model = ".agree"
+                                                    model= ".agree"
                                                     name="agree"
                                                     className="form-check-input"  
                                                 /> 
@@ -117,6 +190,23 @@ document.title = "Contact";
                                             placeholder= "Write something here..." 
                                             rows = "12"
                                             className="form-control"
+                                            validators={{
+                                            
+                                                required
+                        
+                                            }}
+                                            
+                                        />
+                                        <Errors
+                                            className="text-danger"
+                                            model = ".message"
+                                            show = "touched"
+                                            messages = {{
+
+                                                required: "Required This Recommand?"
+                                            }}
+
+                                        
                                         />
                                     </Col>
                                 </FormGroup>
