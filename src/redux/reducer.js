@@ -1,8 +1,8 @@
+import { createForms } from 'react-redux-form';
 import { combineReducers } from 'redux';
 import COMMENTS from '../data/comments';
 import * as actionTypes from './actionTypes';
-import { InitialContactForm } from './form.js';
-import { createForms } from 'react-redux-form';
+import { InitialContactForm } from './forms.js';
 
 
 

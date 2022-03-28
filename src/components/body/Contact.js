@@ -258,4 +258,4 @@ document.title = "Contact";
 
 }
 
-export default connect(null , mapDispatchToProps )(Contact);
+export default connect( null , mapDispatchToProps )(Contact);
