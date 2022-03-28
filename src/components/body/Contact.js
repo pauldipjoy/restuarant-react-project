@@ -1,7 +1,23 @@
 /* eslint-disable react/jsx-pascal-case */
 import React, { Component } from 'react';
-import { Control, Errors, LocalForm } from 'react-redux-form';
+import { connect } from 'react-redux';
+import { actions, Control, Errors, Form } from 'react-redux-form';
 import { Button, Col, FormGroup, Label } from 'reactstrap';
+
+
+const mapDispatchToProps = dispatch => {
+
+    return{
+
+        resetFeedbackForm: ()=> {
+
+            dispatch(actions.reset('feedback'))
+        }
+    }
+}
+
+
+
 
 
 const required = val => val && val.length;
@@ -15,6 +31,8 @@ class Contact extends Component {
 
 handleSubmit = values => {
     console.log(values);
+
+    this.props.resetFeedbackForm();
 
 }
 
@@ -32,7 +50,7 @@ document.title = "Contact";
                             <h3>Send us your feedback</h3>
                         </div>
                         <div className="col-12 col-md-7">
-                            <LocalForm onSubmit={values => this.handleSubmit(values)}>
+                            <Form model = "feedback" onSubmit={values => this.handleSubmit(values)}>
                                 <FormGroup row>
                                     <Label htmlFor="firstname" md = {2}> First Name </Label>
                                     <Col md = {10}>
@@ -108,7 +126,7 @@ document.title = "Contact";
                                             show = "touched"
                                             message = {{
 
-                                                required: "Required This Field?",
+                                                required: "Required This Field,",
                                                 isNumber: "Invalid Number!"
                                             }}
 
@@ -224,7 +242,7 @@ document.title = "Contact";
                                     </Col>
                                 </FormGroup>
 
-                            </LocalForm>
+                            </Form>
 
                         </div>
                         
@@ -240,4 +258,4 @@ document.title = "Contact";
 
 }
 
-export default Contact;
+export default connect(null , mapDispatchToProps )(Contact);
