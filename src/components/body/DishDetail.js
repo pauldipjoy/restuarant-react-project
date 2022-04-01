@@ -45,7 +45,10 @@ return(
             <hr />
             
 
-            <LoadComments  comments = {props.comments} />
+            <LoadComments 
+                comments = {props.comments} 
+                commentsIsLoading = {props.commentsIsLoading}>
+            </LoadComments>
 
             <hr/>
 

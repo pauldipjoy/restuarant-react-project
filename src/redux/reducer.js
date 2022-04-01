@@ -1,6 +1,5 @@
 import { createForms } from 'react-redux-form';
 import { combineReducers } from 'redux';
-import COMMENTS from '../data/comments';
 import * as actionTypes from './actionTypes';
 import { InitialContactForm } from './forms.js';
 
@@ -43,23 +42,39 @@ const dishReducer = (dishState = {isLoading: false , dishes: [] } , action) => {
 
 
 
-const commentReducer = (commentState = COMMENTS , action) => {
+const commentReducer = (commentState = { isLoading:true , comments: []} , action) => {
 
     switch(action.type){
 
-        case actionTypes.ADD_COMMENT:
+    case actionTypes.LOAD_COMMENTS:
+        return{
 
-            let comment = action.payload;
+            ...commentState,
+            isLoading: false,
+            comments:action.payload
+        }
         
-            comment.id =  commentState.length;
-            comment.date = new Date().toDateString();
-    
-            console.log(comment);
-    
-            return commentState.concat(comment);
+    case actionTypes.COMMENTS_LOADING:
+        return{
+            ...commentState,
+            isLoading: true,
+            comments:[]
+        }
 
-        default:
-            return commentState;
+
+    case actionTypes.ADD_COMMENT:
+
+        let comment = action.payload;
+        
+        comment.id =  commentState.length;
+        comment.date = new Date().toDateString();
+    
+        console.log(comment);
+    
+        return commentState.concat(comment);
+
+    default:
+        return commentState;
     }
 }
 
