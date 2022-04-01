@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardBody, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
+import { baseUrl } from '../../redux/baseUrl';
 
 
 
@@ -17,7 +18,7 @@ return(
             <CardImg 
                 width= "100%"
                 alt= {props.dish.name}
-                src = {props.dish.image} 
+                src = { baseUrl + props.dish.image} 
                 style = {{opacity : "0.5"}}
             />
             <CardImgOverlay>

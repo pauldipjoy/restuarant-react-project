@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardBody, CardImg, CardText, CardTitle } from 'reactstrap';
+import { baseUrl } from '../../redux/baseUrl.js';
 import CommentForm from './CommentForm.js';
 import LoadComments from './LoadComments.js';
 
@@ -11,7 +12,7 @@ return(
 
     <Card style={{marginTop:"10px"}}>
 
-        <CardImg top src= {props.dish.image}  alt= {props.dish.name} />
+        <CardImg top src= { baseUrl + props.dish.image}  alt= {props.dish.name} />
 
 
         <CardBody style={{textAlign: "left"}}>

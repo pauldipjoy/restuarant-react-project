@@ -1,5 +1,6 @@
+import axios from 'axios';
 import * as actionTypes from './actionTypes';
-import DISHES from '../data/dishes';
+import { baseUrl } from './baseUrl';
 
 
 
@@ -31,6 +32,7 @@ export const loadDishes = dishes => ({
 
 
 
+
 export const dishesLoading = () => ({
 
     type: actionTypes.DISHES_LOADING
@@ -49,10 +51,12 @@ export const fetchDishes = () => {
         dispatch(dishesLoading());
 
 
-        setTimeout( () => { dispatch(loadDishes(DISHES))
-        
-        }, 2000 );
+        axios.get( baseUrl + "dishes")
+        .then(response => response.data)
+        .then(dishes => dispatch(loadDishes(dishes)))
 
+
+    
     }
 }
 

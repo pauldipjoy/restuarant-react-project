@@ -5,6 +5,8 @@ import { actions, Control, Errors, Form } from 'react-redux-form';
 import { Button, Col, FormGroup, Label } from 'reactstrap';
 
 
+
+
 const mapDispatchToProps = dispatch => {
 
     return{
@@ -221,7 +223,7 @@ document.title = "Contact";
                                             show = "touched"
                                             messages = {{
 
-                                                required: "Required This Recommand?"
+                                                required: "Required This Recommend?"
                                             }}
 
                                         
