@@ -6,21 +6,35 @@ import { baseUrl } from './baseUrl';
 
 
 
-export const addComment = (dishId , author, rating, comment) => ({
+export const addComment = (dishId , author, rating, comment) => dispatch => {
 
-    type: actionTypes.ADD_COMMENT,
 
-    payload : {
-        
-        dishId : dishId ,
-        author : author ,
-        rating : rating ,
+ const newComment = {
+
+        dishId : dishId,
+        author : author,
+        rating : rating,
         comment: comment
+    }
 
-        
-        }
+    newComment.date = new Date().toISOString();
 
+
+    axios.post(baseUrl + 'comments' , newComment)
+    .then(response => response.data)
+    .then(comment => dispatch(commentConcat(comment)));
+
+
+}
+
+
+
+export const commentConcat = (comment) => ({
+
+    type : actionTypes.ADD_COMMENT,
+    payload : comment 
 })
+
 
 
 

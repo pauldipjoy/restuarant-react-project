@@ -31,7 +31,7 @@ const LoadComments = props => {
             })
             
             
-            );
+        );
 
 
     }

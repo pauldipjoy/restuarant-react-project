@@ -25,7 +25,7 @@ const mapDispatchToProps = dispatch => {
         addComment : (dishId , author, rating, comment) => dispatch( addComment(dishId , author, rating, comment)),
 
         fetchDishes: () => dispatch(fetchDishes()),
-        fetchComments:() => dispatch(fetchComments())
+        fetchComments: () => dispatch(fetchComments())
 
     };
 }
@@ -73,7 +73,7 @@ toggleModel = () => {
 }
 
 
-componentDidMount(){
+componentDidMount() {
 
     this.props.fetchDishes();
     this.props.fetchComments();
@@ -129,7 +129,8 @@ render() {
             dish = {this.state.selectedDish}
             comments = {comments}
             addComment = {this.props.addComment}
-            commentsIsLoading = {this.props.comments.isLoading}/>
+            commentsIsLoading = {this.props.comments.isLoading}
+            />
     
         }
     
