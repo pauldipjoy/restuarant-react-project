@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button, CardColumns, Modal, ModalBody, ModalFooter } from 'reactstrap';
+import { Alert, Button, CardColumns, Modal, ModalBody, ModalFooter } from 'reactstrap';
 import { addComment, fetchComments, fetchDishes } from '../../redux/actionCreators.js';
 import DishDetail from './DishDetail.js';
 import Loading from './Loading.js';
@@ -95,6 +95,13 @@ render() {
             <Loading />
 
         );
+    }
+    else if(this.props.dishes.errMess != null){
+
+        return(
+            <Alert color="danger">{this.props.dishes.errMess}</Alert>
+        )
+
     }
 
     else{

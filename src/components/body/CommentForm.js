@@ -51,7 +51,7 @@ this.setState ({
     rating: '' ,
     comment: ''
 
-    })
+})
 
 event.preventDefault();
 

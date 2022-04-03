@@ -68,8 +68,28 @@ handleSubmit = values => {
 
             }
         })
+        
 
-    this.props.resetFeedbackForm();
+
+        .catch(error => {
+            this.setState({
+                alertShow : true,
+                alertText: error.message,
+                alertType: "danger"
+            });
+
+            setTimeout(() => {
+                this.setState({
+                    alertShow : false
+                })
+            }, 2000)
+
+        })
+
+
+
+
+this.props.resetFeedbackForm();
 
 }
 

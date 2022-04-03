@@ -16,7 +16,7 @@ import { InitialContactForm } from './forms.js';
 // }
 
 
-const dishReducer = (dishState = {isLoading: false , dishes: [] } , action) => {
+const dishReducer = (dishState = {isLoading: false , dishes: [] ,errMess: null } , action) => {
 
     switch(action.type){
 
@@ -24,6 +24,7 @@ const dishReducer = (dishState = {isLoading: false , dishes: [] } , action) => {
             return {
                 ...dishState ,
                 isLoading: true,
+                errMess: null,
                 dishes : []
 
             }
@@ -31,8 +32,16 @@ const dishReducer = (dishState = {isLoading: false , dishes: [] } , action) => {
             return {
                 ...dishState ,
                 isLoading: false,
+                errMess: null,
                 dishes: action.payload
             }
+        case actionTypes.DISHES_FAILED:
+            return{
+                ...dishState,
+                isLoading: false,
+                errMess: action.payload,
+                dishes:[]
+            }    
 
         
         default:
@@ -92,6 +101,7 @@ export const Reducer = combineReducers({
     ...createForms({
 
         feedback: InitialContactForm
+        
     })
 
 
