@@ -1,13 +1,17 @@
 /* eslint-disable react/jsx-pascal-case */
+import axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { actions, Control, Errors, Form } from 'react-redux-form';
-import { Button, Col, FormGroup, Label } from 'reactstrap';
+import { Alert, Button, Col, FormGroup, Label } from 'reactstrap';
+import { baseUrl } from '../../redux/baseUrl';
 
 
 
 
 const mapDispatchToProps = dispatch => {
+
+
 
     return{
 
@@ -31,8 +35,39 @@ const validEmail =val => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
 class Contact extends Component {
 
+    state = {
+
+        alertShow : false,
+        alertText : null,
+        alertType: null
+    }
+
 handleSubmit = values => {
-    console.log(values);
+    // console.log(values);
+
+    axios.post(baseUrl + 'feedback' , values)
+        .then(response => response.status)
+        .then(status =>{
+            if(status === 201){
+
+                this.setState({
+
+                    alertShow : true,
+                    alertText : "Submitted Successfully!",
+                    alertType: "success"
+
+                });
+
+                setTimeout(() => {
+
+                    this.setState({
+                        
+                        alertShow : false
+                    })
+                }, 2000)
+
+            }
+        })
 
     this.props.resetFeedbackForm();
 
@@ -48,8 +83,13 @@ document.title = "Contact";
 
                 <div className= "container">
                     <div className="row row-content" style={ {paddingleft:"20px" , textAlign: "left"} }>
+
+                        
                         <div className="col-12">
                             <h3>Send us your feedback</h3>
+
+                            <Alert isOpen = {this.state.alertShow} color = {this.state.alertType}> {this.state.alertText} </Alert>
+                            
                         </div>
                         <div className="col-12 col-md-7">
                             <Form model = "feedback" onSubmit={values => this.handleSubmit(values)}>
