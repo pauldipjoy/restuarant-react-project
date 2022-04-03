@@ -9,18 +9,18 @@ import { baseUrl } from './baseUrl';
 export const addComment = (dishId , author, rating, comment) => dispatch => {
 
 
- const newComment = {
+const newComment = {
 
         dishId : dishId,
         author : author,
         rating : rating,
         comment: comment
-    }
+}
 
-    newComment.date = new Date().toISOString();
+newComment.date = new Date().toISOString();
 
 
-    axios.post(baseUrl + 'comments' , newComment)
+axios.post(baseUrl + 'comments' , newComment)
     .then(response => response.data)
     .then(comment => dispatch(commentConcat(comment)));
 
@@ -66,6 +66,8 @@ export const fetchComments = () => {
     
     }
 }
+
+
 
 
 
